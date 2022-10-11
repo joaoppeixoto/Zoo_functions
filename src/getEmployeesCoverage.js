@@ -1,7 +1,7 @@
 const { employees, species } = require('../data/zoo_data');
 const data = require('../data/zoo_data');
 
-const test = (employer) => {
+const getEmployer = (employer) => {
   let verify;
   if (!employer) verify = employees;
   else {
@@ -12,11 +12,10 @@ const test = (employer) => {
 };
 
 function getEmployeesCoverage(employer) {
-  const verify = test(employer);
-  if (verify[0] === 0) throw new Error('Informações inválidas');
+  const verify = getEmployer(employer);
   verify.forEach((value, index) => {
-    const locations = []; const speciesss = [];
-    console.log(value);
+    const locations = [];
+    const speciesss = [];
     value.responsibleFor.forEach((specieId) => {
       const specieFound = species.filter((specie) => specie.id === specieId)[0];
       speciesss.push(specieFound.name);
@@ -28,6 +27,7 @@ function getEmployeesCoverage(employer) {
       locations,
       id: value.id };
   });
+  if (!verify) throw new Error('Informações inválidas');
   return verify.length === 1 ? verify[0] : verify;
 }
 

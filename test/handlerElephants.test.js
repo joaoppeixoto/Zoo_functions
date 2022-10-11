@@ -28,4 +28,11 @@ describe('Testes da função HandlerElephants', () => {
   it('verifica se handlerElephants recebe os parametros corretamente', () => {
     expect(typeof handlerElephants(123)).toBe('string');
   });
+  it('Não passando argumentos a função deve retornar undefined', () => {
+    expect(handlerElephants()).toEqual(undefined);
+  });
+
+  it('Passada uma string que não contempla uma funcionalidade deve retornar null', () => {
+    expect(handlerElephants('texto')).toBe(null);
+  });
 });
