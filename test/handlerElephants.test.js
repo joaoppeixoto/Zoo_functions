@@ -24,4 +24,8 @@ describe('Testes da função HandlerElephants', () => {
   it('retorna um array com a relação de dias em que é possível visitar os elefantes', () => {
     expect(handlerElephants('availability')).toStrictEqual(['Friday', 'Saturday', 'Sunday', 'Tuesday']);
   });
+
+  it('verifica se handlerElephants recebe os parametros corretamente', () => {
+    expect(typeof handlerElephants(123)).toBe('string');
+  });
 });

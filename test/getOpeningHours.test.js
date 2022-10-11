@@ -23,4 +23,7 @@ describe('Testes da função getOpeningHours', () => {
   it('retorna se o zoo está fechado quarta', () => {
     expect(getOpeningHours('Wednesday', '07:00-AM')).toBe('The zoo is closed');
   });
+  it('testa se getOpeningHours é uma função', () => {
+    expect(typeof getOpeningHours).toBe('function');
+  });
 });
