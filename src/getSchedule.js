@@ -1,6 +1,6 @@
 const data = require('../data/zoo_data');
 
-const { hours, species} = data;
+const { hours, species } = data;
 
 const weekDay = Object.keys(hours);
 const total = () => {
